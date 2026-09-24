@@ -1,0 +1,25 @@
+- use shadcn UI + nextjs + base ui (to start a new project)
+- npm run format (to format .tsx files in the project)
+- npx shadcn@latest add --all (to add all shadcn components -> components/ui/...)
+
+- every page.tsx needs to return react component in nextjs, otherwise generates error
+
+- metadata inside root layout.tsx (import metadata from 'next')
+
+- use <Link> to navigate between pages
+- use buttonVariants/shadcn to show links as buttonVariants
+
+- install prisma 7 (install dependencies section)
+- npm install prisma@prev tsx @types/pg --save-dev
+- npm install @prisma/client@7 @prisma/adapter-pg dotenv pg
+- npx prisma init --output ../app/generated/prisma
+    -- npx prisma init --output ../generated/prisma (if do not want to install inside app/)
+- run npx prisma generate (it will create a generated folder in root)
+- make changes to .env 
+    -- DATABASE_URL=postgres://postgres:password@localhost:5432/db_name_here
+- inside root lib folder, create 'prisma.ts' prisma client, copy the code to write in this file from prisma website under section 'lib/prisma.ts'
+
+- create models inside (prisma/schema) file
+- to create database and tables run
+    -- npx prisma migrate dev --name init
+    -- npx prisma generate (to generate new client)
