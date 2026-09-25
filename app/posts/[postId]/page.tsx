@@ -1,5 +1,6 @@
 import prisma from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import { PostDeleteDialog } from "./_components/post-delete-dialog";
 
 export default async function PostDetailsPage(
   props: PageProps<"/posts/[postId]">
@@ -21,7 +22,7 @@ export default async function PostDetailsPage(
   }
   return (
     <div className="p-5">
-      <div className="space-y-1 bg-slate-300 p-3">
+      <div className="mb-5 space-y-1 bg-slate-300 p-3">
         <h1 className="text-3xl font-black">{post.title}</h1>
         <p className="text-sm">
           Author: {post.author?.name ?? "Deleted Author"}
@@ -29,6 +30,7 @@ export default async function PostDetailsPage(
         <p className="text-sm">Created: {post.createdAt.toLocaleString()}</p>
         <p className="text-sm">Updated: {post.updatedAt.toLocaleString()}</p>
       </div>
+      <PostDeleteDialog postId={post.id} />
       <p className="p-4">{post.content}</p>
     </div>
   );

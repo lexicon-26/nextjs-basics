@@ -23,3 +23,38 @@
 - to create database and tables run
     -- npx prisma migrate dev --name init
     -- npx prisma generate (to generate new client)
+
+
+- Server and Client Side Validations
+- Server Actions (search) from client to Server
+
+- Creating client side forms
+    -- build forms in React using TanStack Form and Zod
+    -- if you're already using React + TypeScript, then TanStack Form Zod is one of the best combinations today
+        --- TanStack Form → handles form state, touched fields, submission, errors, performance.
+        --- Zod → validates and type-checks your form data.
+        --- Together they give you type-safe forms with minimal re-renders.
+
+- Zod (used only for validation, means whatever data is put in the form, verify it)
+    -- install 
+        --- npm install zod @tanStack/react-form
+    -- create a zod schema (means setting the rules)
+    -- create the form
+    -- connect the fields
+    -- reusable zod validator
+    -- validate entire form on submit
+
+- z.schema() -> set the rules
+- z.infer() -> create the TypeScript type from the z.schema() rules
+
+- tanStack form validates the form
+    -- a state mananger that checks what data user is entering, what is the current state of form and how it will be submit
+    -- tanStack checks that once form is filled, is it according to the rules that zod has set
+- zod validates the data
+    -- a validation library, that verifies data, like password must be 6 characters
+    -- zod create rules how data should be looked
+
+- server actions and mutation
+    -- server actions -> function that runs on server and can be called from browser
+    -- mutation -> create, update, delete data
+    -- query -> read data

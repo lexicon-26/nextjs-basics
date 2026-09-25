@@ -11,6 +11,7 @@ const links = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Posts", href: "/posts" },
+  { label: "Create Post", href: "/posts/create" },
 ];
 
 export default function MainNavbar() {
